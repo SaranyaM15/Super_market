@@ -1,7 +1,4 @@
-# Super_market 
-Here’s a well-structured **README** file for your **Supermarket Inventory Management System**:
 
----
 
 # 🛒 Supermarket Inventory Management System
 
