@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Products</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        h1 {
+            margin-top: 20px;
+            font-size: 2rem;
+            color: #444;
+        }
+        table {
+            border-collapse: collapse;
+            width: 90%;
+            max-width: 1000px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(7, 115, 41, 0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #5ca32c;
+            color: white;
+            text-transform: uppercase;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        td {
+            color: #555;
+        }
+        a {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: #5ca32c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        a:hover {
+            background-color: #049a39;
+        }
+    </style>
+</head>
+<body>
+    <h1>Products List</h1>
+    <table>
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Category ID</th>
+            <th>Supplier ID</th>
+            <th>Unit Price</th>
+            <th>Units in Stock</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.product_id }}</td>
+            <td>{{ product.product_name }}</td>
+            <td>{{ product.category_id }}</td>
+            <td>{{ product.supplier_id }}</td>
+            <td>{{ product.unit_price }}</td>
+            <td>{{ product.units_in_stock }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/add_product">Add New Product</a>
+</body>
+</html>

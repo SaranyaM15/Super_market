@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermarket Inventory Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic reset and body styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        /* Header styling */
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 2em;
+        }
+        /* Navigation styling */
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            background-color: #333;
+        }
+        .nav-bar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .nav-bar a:hover {
+            background-color: #555;
+        }
+        /* Main content styling */
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            gap: 20px;
+        }
+        .card {
+            background-color: white;
+            width: 250px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .card p {
+            font-size: 1em;
+            color: #777;
+            margin-bottom: 15px;
+        }
+        .card a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        .card a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header">
+        <h1>Supermarket Inventory Management System</h1>
+        <p>Welcome to the management dashboard</p>
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="nav-bar">
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('view_products') }}">Products</a>
+        <a href="{{ url_for('view_suppliers') }}">Suppliers</a>
+        <a href="{{ url_for('view_orders') }}">Orders</a>
+        <a href="{{ url_for('view_customers') }}">Customers</a>
+        <a href="{{ url_for('view_warehouses') }}">Warehouses</a>
+        <a href="{{ url_for('view_transactions') }}">Transactions</a>
+        <a href="{{ url_for('billing') }}">Checkout</a>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <!-- Product Management Card -->
+        <div class="card">
+            <h3>Manage Products</h3>
+            <p>View, add, and update products in the inventory.</p>
+            <a href="{{ url_for('view_products') }}">Go to Products</a>
+        </div>
+
+        <!-- Supplier Management Card -->
+        <div class="card">
+            <h3>Manage Suppliers</h3>
+            <p>Keep track of your suppliers and their contact details.</p>
+            <a href="{{ url_for('view_suppliers') }}">Go to Suppliers</a>
+        </div>
+
+        <!-- Order Management Card -->
+        <div class="card">
+            <h3>Manage Orders</h3>
+            <p>View and update customer orders efficiently.</p>
+            <a href="{{ url_for('view_orders') }}">Go to Orders</a>
+        </div>
+
+        <!-- Customer Management Card -->
+        <div class="card">
+            <h3>Manage Customers</h3>
+            <p>Access customer information and manage details.</p>
+            <a href="{{ url_for('view_customers') }}">Go to Customers</a>
+        </div>
+
+        <!-- Warehouse Management Card -->
+        <div class="card">
+            <h3>Manage Warehouses</h3>
+            <p>View and organize warehouse inventory and locations.</p>
+            <a href="{{ url_for('view_warehouses') }}">Go to Warehouses</a>
+        </div>
+
+        <!-- Transactions Management Card -->
+        <div class="card">
+            <h3>Manage Transactions</h3>
+            <p>View, track, and manage transactions.</p>
+            <a href="{{ url_for('view_transactions') }}">Go to Transactions</a>
+        </div>
+
+        <!-- Checkout Management Card -->
+        <div class="card">
+            <h3>Checkout</h3>
+            <p>Select products and generate bill.</p>
+            <a href="{{ url_for('billing') }}">Go to Checkout</a>
+        </div>
+    </div>
+
+</body>
+</html>

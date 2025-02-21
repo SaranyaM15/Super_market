@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Suppliers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        h1 {
+            margin: 20px 0;
+            font-size: 2rem;
+            color: #444;
+        }
+        table {
+            border-collapse: collapse;
+            width: 95%;
+            max-width: 1200px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #079512;
+            color: white;
+            text-transform: uppercase;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        td {
+            color: #555;
+            font-size: 0.9rem;
+        }
+        a {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: #06a10e;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        a:hover {
+            background-color: #00b33f;
+        }
+    </style>
+</head>
+<body>
+    <h1>Suppliers List</h1>
+    <table>
+        <tr>
+            <th>Supplier ID</th>
+            <th>Supplier Name</th>
+            <th>Contact Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Postal Code</th>
+            <th>Country</th>
+            <th>Phone</th>
+           
+        </tr>
+        {% for supplier in suppliers %}
+        <tr>
+            <td>{{ supplier.supplier_id }}</td>
+            <td>{{ supplier.supplier_name }}</td>
+            <td>{{ supplier.contact_name }}</td>
+            <td>{{ supplier.address }}</td>
+            <td>{{ supplier.city }}</td>
+            <td>{{ supplier.postal_code }}</td>
+            <td>{{ supplier.country }}</td>
+            <td>{{ supplier.phone }}</td>
+           
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('add_supplier') }}">Add New Supplier</a>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Suppliers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Suppliers List</h1>
+    <table border="1">
+        <tr>
+            <th>Supplier ID</th>
+            <th>Supplier Name</th>
+            <th>Contact Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Postal Code</th>
+            <th>Country</th>
+            <th>Phone</th>
+        </tr>
+        {% for supplier in suppliers %}
+        <tr>
+            <td>{{ supplier.supplier_id }}</td>
+            <td>{{ supplier.supplier_name }}</td>
+            <td>{{ supplier.contact_name }}</td>
+            <td>{{ supplier.address }}</td>
+            <td>{{ supplier.city }}</td>
+            <td>{{ supplier.postal_code }}</td>
+            <td>{{ supplier.country }}</td>
+            <td>{{ supplier.phone }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/add_supplier">Add New Supplier</a>
+</body>
+</html>
